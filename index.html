@@ -4,8 +4,87 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Tree Visualizer</title>
+    <style>
+      * {
+        box-sizing: border-box;
+        padding: 0;
+        margin: 0;
+      }
+      /* Make the container take full height of the viewport */
+      /* Style for the header to center its contents */
+      .header {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 20px; /* Optional: Add padding around the header */
+        background-color: #f0f0f0; /* Optional: Background color for the header */
+        border-bottom: 1px solid #ddd; /* Optional: Border at the bottom of the header */
+      }
+
+      /* Style for the input container */
+      .inputContainer {
+        display: flex;
+        align-items: center;
+        gap: 10px; /* Adjust the spacing between items */
+        background-color: #ffffff; /* Background color for the container */
+        padding: 10px;
+        border-radius: 8px; /* Rounded corners */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: Subtle shadow */
+      }
+
+      /* Style for the textarea */
+      .input {
+        flex-grow: 1;
+        min-height: 40px; /* Adjust to your preference */
+        resize: none; /* Prevent resizing if desired */
+        padding: 8px;
+        border: 1px solid #ddd; /* Light border */
+        border-radius: 4px;
+      }
+
+      /* Style for the action buttons container */
+      .actionButtons {
+        display: flex;
+        gap: 10px; /* Spacing between buttons */
+      }
+
+      /* Style for individual buttons */
+      .clearButton,
+      .applyButton {
+        padding: 8px 16px; /* Adjust padding as needed */
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        color: white;
+        font-weight: bold;
+      }
+
+      .clearButton {
+        background-color: #f44336; /* Red background for clear button */
+      }
+
+      .applyButton {
+        background-color: #4caf50; /* Green background for apply button */
+      }
+    </style>
   </head>
   <body>
-    <h1>Tree Visualizer</h1>
+    <!-- <div class="header"> -->
+    <div class="inputContainer">
+      <textarea
+        class="input"
+        rows="1"
+        placeholder="Write value in comma seperated"
+      ></textarea>
+      <div class="actionButtons">
+        <button class="applyButton">Apply</button>
+        <button class="clearButton">Clear</button>
+      </div>
+    </div>
+    <!-- </div> -->
+
+    <canvas></canvas>
+
+    <script type="module" src="./makeBinaryTree.js"></script>
   </body>
 </html>
